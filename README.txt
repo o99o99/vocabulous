@@ -11,7 +11,7 @@ Please let me know about any bugs and suggestions are much appreciated.
 I am relatively new to Python, so this is a fairly simple project. Feel free to adapt it in accordance with the license.
 
 Licensed under the MIT License
-Copyright Owain Bates
+Copyright Owain Bates  
 
 
 
