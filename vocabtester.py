@@ -1,23 +1,44 @@
 #EDIT DEFAULT DICTIONARY HERE:
-filename = "words.vocab"
+filename = "words.txt"
 
-#####   CHANGELOG:
 
-###     1.3
 
+############################################################
+##                       PLEASE NOTE:                     ##
+##       This program should be run in the Windows        ##
+##          command window, not the Python IDLE.          ##
+############################################################
+
+
+
+#                       CHANGELOG:
+#
+############################################################
+#                           
+#    1.4
+#
+#-Added cls function to save typing
+#
+#    1.3
+#
 #-Added support for .vocab files
-
-###     1.2
-
+#
+#    1.2
+#
 #-Added new final test
-#   -Tested on all words got wrong
-#   -Added information text RE this
+#       -Test on all words got wrong
+#       -Added information text RE this
 #-Fixed 2 looping issues
 #-Minor "time.sleep", "print()" and "cls" edits
+#
+############################################################
 
 
 
 
+###                  BEGIN PROGRAM:                      ###
+def cls():
+    os.system('cls' if os.name == 'nt' else 'clear')
 
 import time
 import os
@@ -28,7 +49,7 @@ print("|  |  ||  O  | /  /  |     ||     T|  |  || l    |  O  ||  |  |\__  \ ")
 print("|     |      |/  \_  |  |  ||  O  ||  :  || |    |     ||  :  |/  \ |")
 print(" \   / l     !\     ||  |  ||     |l     || |___ |l     !l     |    |")
 print("  \_/   \___/  \____||__|__|l_____j \__,_jl_____j \___/  \__,_j \___j\n")
-print("1.3                                                       OWAIN BATES\n")
+print("1.4                                                       OWAIN BATES\n")
 time.sleep(1)
 print("    Written by Owain Bates using Python 3.3.3")
 print("    With thanks to bedekelly and zahlman\n")
@@ -168,7 +189,7 @@ while changefile != 1 and changefile !=  2:
                 input("MAJOR FORMATTING ERROR")
                 input("""Whoops - that file doesn't seem to be formatted correctly. I'll repeat the
 instructions for you! Press enter to try again.""")
-                os.system('cls' if os.name == 'nt' else 'clear')
+                cls()
             elif contsetup ==2:
                 time.sleep(1)
                 print()
@@ -195,7 +216,7 @@ instructions for you! Press enter to try again.""")
                 input("FILE ADDRESS ERROR")
                 input("""Whoops - that file doesn't exist. I'll repeat the
 instructions for you! Press enter to try again.""")
-                os.system('cls' if os.name == 'nt' else 'clear')
+                cls()
             else:
                 pass
             print()
@@ -220,7 +241,7 @@ time.sleep(1)
 print("SETUP COMPLETE!")
 time.sleep(0.5)
 input("Press enter to continue")
-os.system('cls' if os.name == 'nt' else 'clear')
+cls()
 
 playagain = 1
 finalconf = 0
@@ -273,25 +294,25 @@ while playagain == 1 and finalconf!=1:
             while lifelimit < 1:
                 print("Now select your number of lives.")
                 lifelimit = int(input("This must be greater than 0: "))
-                os.system('cls' if os.name == 'nt' else 'clear')
+                cls()
                 print()
                 if lifelimit < 1:
                     print("Invalid number. Try again.")
         elif gamemode ==2:
-            os.system('cls' if os.name == 'nt' else 'clear')
+            cls()
             print("To end your game on unlimited mode, type 'end'.")
         elif gamemode ==3:
             while questionlimit < 1:
                 print("Select number of questions.")
                 questionlimit = int(input("This must be greater than 0: "))
-                os.system('cls' if os.name == 'nt' else 'clear')
+                cls()
                 print()
                 if questionlimit < 1:
                     print("Invalid number. Try again.")
         else:
             print("Invalid game mode. Try again.")
             time.sleep(1)
-            os.system('cls' if os.name == 'nt' else 'clear')
+            cls()
             print()
 
     time.sleep(0.5)
@@ -308,7 +329,7 @@ while playagain == 1 and finalconf!=1:
         if res == "end" and gamemode == 2:
             print()
             time.sleep(0.3)
-            os.system('cls' if os.name == 'nt' else 'clear')
+            cls()
             qnum = qnum-1
             break
         if res in mdict[q] and res != "":
@@ -340,7 +361,7 @@ while playagain == 1 and finalconf!=1:
             time.sleep(0.5)
             print("You have lost all", lifelimit, "lives!")
             time.sleep(1.5)
-            os.system('cls' if os.name == 'nt' else 'clear')
+            cls()
             print()
             print("""
   ____   ____  ___ ___    ___       ___   __ __    ___  ____  
@@ -354,7 +375,7 @@ l___,_jl__j__jl___j___jl_____j     \___/   \_/  l_____jl__j\_j
             print()
             time.sleep(0.8)
             input("Press enter to continue")
-            os.system('cls' if os.name == 'nt' else 'clear')
+            cls()
             
             print()
             cont = 2
@@ -369,7 +390,7 @@ l___,_jl__j__jl___j___jl_____j     \___/   \_/  l_____jl__j\_j
             tpw = round(tpw, 2)
             print("The test is complete!")
             input("Press enter to continue")
-            os.system('cls' if os.name == 'nt' else 'clear')
+            cls()
             cont = 2
         else:
             cont = 1
@@ -536,7 +557,7 @@ You got a perfect score! Congratulations! Try a new set of words, or play again 
     except ValueError:
         finalconf = 0
     time.sleep(0.3)
-    os.system('cls' if os.name == 'nt' else 'clear')
+    cls()
     if finalconf == 1:
         break
 
@@ -563,7 +584,7 @@ print()
 input("Press enter to take the test: ")
 finaldict = {}
 finaldict = totalwrongdict.copy()
-os.system('cls' if os.name == 'nt' else 'clear')
+cls()
 while fintest == 1:
     print()
     q = choice(list(totalwrongdict.keys()))
