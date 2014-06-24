@@ -14,6 +14,10 @@ filename = "words.txt"
 #                       CHANGELOG:
 #
 ############################################################
+#
+#    1.4.1
+#
+#-Fixed bug causing crash at final test when no words were wrong
 #                           
 #    1.4
 #
@@ -560,68 +564,75 @@ You got a perfect score! Congratulations! Try a new set of words, or play again 
     cls()
     if finalconf == 1:
         break
-
 print()
-print()
-print()
-print("Here is a list of every incorrect word from this session.")
-print("Take note of them if you want to revise them.")
-time.sleep(0.3)
-print()
-for key, value in totalwrongdict.items():
-    print("{} : {}".format(key,value))
-time.sleep(2)
-playagain = 2
-
-
-finconf = 0
-fintest = 1
-print()
-print("You will now take a final test on all of these words. They")
-print("will not be removed from the list until you answer them")
-print("correctly. This could take a long time!")
-print()
-input("Press enter to take the test: ")
-finaldict = {}
-finaldict = totalwrongdict.copy()
-cls()
-while fintest == 1:
-    print()
-    q = choice(list(totalwrongdict.keys()))
-    res = input('{0} is: '.format(q))
-    if res == "end":
-        print()
-        time.sleep(0.3)
-        fintest = 0
-        finconf = 1
-        break
-    elif res in totalwrongdict[q] and res != "":
-        time.sleep(0.3)
-        print("Correct Answer!")
-        del totalwrongdict[q]
-    elif res not in totalwrongdict[q] or res == "":
-        time.sleep(0.7)
-        print("Incorrect! The correct answer was:", mdict[q])
-
-    lengdi = len(totalwrongdict)  
-    if lengdi == 0:
-        fintest = 0
-        break
-    else:
-        pass
-
-        
-time.sleep(1)
-print()
-print("Well done, you finally got them all right!")
 time.sleep(0.5)
-print("Here is that list once more:")
-time.sleep(1)
-print()
-for key, value in finaldict.items():
-    print("{} : {}".format(key,value))
-time.sleep(2)
-print()
+if len(totalwrongdict) > 0:
+    print()
+    print()
+    print()
+    print("Here is a list of every incorrect word from this session.")
+    print("Take note of them if you want to revise them.")
+    time.sleep(0.3)
+    print()
+    for key, value in totalwrongdict.items():
+        print("{} : {}".format(key,value))
+    time.sleep(2)
+    playagain = 2
+    
+    
+    finconf = 0
+    fintest = 1
+    print()
+    print("You will now take a final test on all of these words. They")
+    print("will not be removed from the list until you answer them")
+    print("correctly. This could take a long time!")
+    print()
+    input("Press enter to take the test: ")
+    finaldict = {}
+    finaldict = totalwrongdict.copy()
+    cls()
+    while fintest == 1:
+        print()
+        q = choice(list(totalwrongdict.keys()))
+        res = input('{0} is: '.format(q))
+        if res == "end":
+            print()
+            time.sleep(0.3)
+            fintest = 0
+            finconf = 1
+            break
+        elif res in totalwrongdict[q] and res != "":
+            time.sleep(0.3)
+            print("Correct Answer!")
+            del totalwrongdict[q]
+        elif res not in totalwrongdict[q] or res == "":
+            time.sleep(0.7)
+            print("Incorrect! The correct answer was:", mdict[q])
+    
+        lengdi = len(totalwrongdict)  
+        if lengdi == 0:
+            fintest = 0
+            break
+        else:
+            pass
+    
+            
+    time.sleep(1)
+    print()
+    print("Well done, you finally got them all right!")
+    time.sleep(0.5)
+    print("Here is that list once more:")
+    time.sleep(1)
+    print()
+    for key, value in finaldict.items():
+        print("{} : {}".format(key,value))
+    time.sleep(2)
+    
+    print()
+else:
+    print("You got nothing wrong at all! Well done!")
+    time.sleep(1)
+    print()
 input("Press enter to exit")
 
         
