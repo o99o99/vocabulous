@@ -12,13 +12,13 @@ to whom the Software is furnished to do so, subject to the following conditions:
       be included in all copies or substantial portions of the Software. 
     b)The copyright holder, where allowable by law, has the final decision over the 
       definition of "substantial" in clause 1a, although it would usually refer to a 
-      portion of code of at least fifty lines and specifically unique or integral to
+      portion of code of at least twenty-five lines or specifically unique or integral to
       this Software.
   
   2.a)No individual who obtains a copy of this Software or any part of this code may
       sell or make profit from copies or substantial portions of the Software without 
       permission from the copyright holder.
-    b)As in clause 1a, the copyright holder has the final say on the definition of 
+    b)As in clause 1b, the copyright holder has the final say on the definition of 
       "substantial".
   
   3.a)The copyright holder's name "Owain Bates" or "o99o99" must be stated in 
@@ -27,7 +27,7 @@ to whom the Software is furnished to do so, subject to the following conditions:
     b)Where possible, all end users should at some point receive a link to the 
       following URL: http://github.com/o99o99/vocabulous whether during installation,
       in an included file or in the program itself.
-    c)As in clause 1a, the copyright holder has the final say on the definition of 
+    c)As in clause 1b, the copyright holder has the final say on the definition of 
       "substantial".
     
   4. The user agrees to all terms of this agreement.
